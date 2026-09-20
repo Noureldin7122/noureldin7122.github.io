@@ -4,443 +4,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>نور الدين ممدوح | الملف الشخصي والأكاديمي</title>
-    <!-- استدعاء خط Cairo لجمالية التصميم -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #2563eb;
-            --accent-color: #0d9488;
-            --bg-color: #f8fafc;
+            --primary: #1e3a8a;
+            --secondary: #2563eb;
+            --accent: #0d9488;
+            --bg-color: #f1f5f9;
             --card-bg: #ffffff;
-            --text-color: #1e293b;
+            --text-main: #1e293b;
             --text-muted: #64748b;
             --border-radius: 12px;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Cairo', sans-serif;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            padding-bottom: 50px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-            color: #ffffff;
-            text-align: center;
-            padding: 4rem 1rem 3rem 1rem;
-            border-bottom: 4px solid var(--secondary-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-size: 2.4rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        header p.subtitle {
-            font-size: 1.2rem;
-            color: #93c5fd;
-            margin-bottom: 15px;
-        }
-
-        .rus-intro {
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            direction: ltr;
-            font-style: italic;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .container {
-            width: 92%;
-            max-width: 1000px;
+        .layout-wrapper {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 30px;
+            max-width: 1350px;
             margin: 30px auto;
+            padding: 0 20px;
+            align-items: start;
         }
 
-        .section {
+        /* الشريط الجانبي الثابت */
+        .sidebar {
             background: var(--card-bg);
-            padding: 30px;
-            margin-bottom: 30px;
             border-radius: var(--border-radius);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            border: 1px solid #e2e8f0;
+            padding: 30px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 30px;
+            border-top: 5px solid var(--primary);
         }
 
-        .section-title {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            font-weight: 700;
-            border-bottom: 3px solid var(--secondary-color);
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        .sidebar-header { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px; }
+        .sidebar-header h1 { font-size: 1.5rem; color: var(--primary); font-weight: 800; line-height: 1.3; }
+        .sidebar-header p { font-size: 0.88rem; color: var(--text-muted); margin-top: 8px; font-weight: 600; }
+        .rus-intro { font-size: 0.8rem; color: #64748b; direction: ltr; font-style: italic; margin-top: 10px; display: block; line-height: 1.4; }
 
-        /* سحابة المستندات */
-        .cloud-box {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            border: 2px dashed var(--secondary-color);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            text-align: center;
-        }
-
-        .cloud-box p {
-            font-size: 1.05rem;
-            color: #1e40af;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .btn-cloud {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: #ffffff;
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
-        }
-
-        .btn-cloud:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        /* شبكة الشهادات */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .cert-card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .cert-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
-        }
-
-        .cert-card h3 {
-            font-size: 1.1rem;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .cert-issuer {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .cert-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-action {
-            flex: 1;
-            text-align: center;
-            padding: 8px 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 700;
-            transition: background 0.2s ease;
-        }
-
-        .btn-view {
-            background-color: #f1f5f9;
-            color: #334155;
-            border: 1px solid #cbd5e1;
-        }
-
-        .btn-view:hover {
-            background-color: #e2e8f0;
-        }
-
-        .btn-verify {
-            background-color: #ccfbf1;
-            color: #0f766e;
-            border: 1px solid #99f6e4;
-        }
-
-        .btn-verify:hover {
-            background-color: #99f6e4;
-        }
-
-        /* شبكة وسائل التواصل */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
+        .contact-list { list-style: none; }
         .contact-item {
             display: flex;
-            align-items: center;
-            padding: 12px 16px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px;
             background: #f8fafc;
             border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 600;
             transition: all 0.2s ease;
+            text-decoration: none;
+            color: var(--text-main);
+            border: 1px solid transparent;
         }
+        .contact-item:hover { background: #fff; border-color: var(--secondary); box-shadow: 0 2px 8px rgba(37,99,235,0.1); transform: translateX(-3px); }
+        .contact-icon { font-size: 1.2rem; margin-left: 10px; }
+        .contact-info { flex: 1; overflow: hidden; }
+        .contact-title { font-size: 0.78rem; color: var(--text-muted); font-weight: 700; display: block; }
+        .contact-value { font-size: 0.82rem; font-weight: 600; word-break: break-all; direction: ltr; text-align: right; display: block; color: var(--primary); }
 
-        .contact-item:hover {
-            background: #ffffff;
-            border-color: var(--secondary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
+        /* المحتوى الرئيسي */
+        .main-content { display: flex; flex-direction: column; gap: 30px; }
+        
+        .section { background: var(--card-bg); padding: 30px; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .section-title { color: var(--primary); font-size: 1.35rem; font-weight: 800; border-bottom: 3px solid var(--secondary); padding-bottom: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
 
-        .contact-icon {
-            font-size: 1.2rem;
-            margin-left: 12px;
-            width: 24px;
-            text-align: center;
-        }
+        /* شريط البحث */
+        .search-container { position: relative; width: 100%; max-width: 320px; }
+        .search-input { width: 100%; padding: 9px 38px 9px 15px; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.88rem; outline: none; transition: border-color 0.3s; }
+        .search-input:focus { border-color: var(--secondary); }
+        .search-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); font-size: 1rem; color: #94a3b8; }
 
-        /* قائمة الخبرات */
-        .exp-list {
-            list-style: none;
-        }
+        /* شبكة الخبرات والتدريب */
+        .experience-card { margin-bottom: 20px; padding: 18px; border-right: 4px solid var(--secondary); background: #f8fafc; border-radius: 0 8px 8px 0; }
+        .experience-card h3 { color: var(--primary); font-size: 1.05rem; margin-bottom: 5px; }
+        .experience-card p { color: var(--text-muted); font-size: 0.9rem; }
 
-        .exp-item {
-            padding: 15px;
-            background: #f8fafc;
-            border-right: 4px solid var(--secondary-color);
-            margin-bottom: 12px;
-            border-radius: 0 8px 8px 0;
-        }
+        .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+        .cert-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.3s ease; }
+        .cert-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); background: #fff; border-color: var(--secondary); }
+        .cert-card h3 { font-size: 1.02rem; color: var(--primary); margin-bottom: 5px; }
+        .cert-issuer { font-size: 0.84rem; color: var(--text-muted); margin-bottom: 15px; font-weight: 600; }
+        
+        .cert-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn-action { text-align: center; padding: 8px; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: all 0.2s ease; display: flex; align-items: center; justify-content: center; gap: 5px; }
+        .btn-view { background-color: var(--primary); color: #fff; }
+        .btn-view:hover { background-color: #152c6a; }
+        .btn-verify { background-color: #ecfdf5; color: #059669; border: 1px solid #10b981; }
+        .btn-verify:hover { background-color: #10b981; color: #fff; }
 
-        .exp-item h3 {
-            font-size: 1.05rem;
-            color: var(--primary-color);
-        }
-
-        .exp-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 40px;
+        @media (max-width: 992px) {
+            .layout-wrapper { grid-template-columns: 1fr; }
+            .sidebar { position: static; margin-bottom: 20px; }
+            .search-container { max-width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>نور الدين ممدوح أبو إسماعيل</h1>
-        <p class="subtitle">باحث قانوني | مهتم بإدارة الأعمال، التكنولوجيا والذكاء الاصطناعي</p>
-        <p class="rus-intro">Амбициозный специалист с юридическим образованием, опытом в сфере бизнес-администрирования и интересом к современным технологиям.</p>
-    </header>
-
-    <div class="container">
-
-        <!-- نبذة شخصية -->
-        <div class="section">
-            <h2 class="section-title">📌 نبذة عني</h2>
-            <p>أجمع بين الدراية القانونية الأكاديمية والخبرة العملية في الجوانب الإدارية والمحاسبية، إلى جانب الشغف بتطبيقات الذكاء الاصطناعي والتسويق الرقمي. أسعى لتطوير مساري الأكاديمي والمهني من خلال التأهيل الدولي والالتحاق بالبرامج الأكاديمية المتقدمة.</p>
-        </div>
-
-        <!-- سحابة المستندات والشهادات -->
-        <div class="section">
-            <h2 class="section-title">☁️ سحابة المستندات والشهادات الشاملة</h2>
-            <div class="cloud-box">
-                <p>يمكنكم الاطلاع على كافة الأوراق الرسمية، الشهادات، خطابات التوصيات، والوثائق الأكاديمية المؤرشفة عبر السحابة:</p>
-                <!-- استبدل الرابط التالي برابط مجلد Google Drive أو OneDrive الخاص بك -->
-                <a href="https://drive.google.com" target="_blank" class="btn-cloud">📁 فتح سحابة المستندات الرسمية</a>
+    <div class="layout-wrapper">
+        
+        <!-- الشريط الجانبي لبيانات التواصل والملخص -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>نور الدين ممدوح خميس أحمد أبو إسماعيل</h1>
+                <p>كلية الحقوق - جامعة الإسكندرية</p>
+                <span class="rus-intro">Амбициозный специалист с юридическим образованием и опытом в бизнес-администрировании.</span>
             </div>
-        </div>
 
-        <!-- معرض الشهادات والاعتمادات -->
-        <div class="section">
-            <h2 class="section-title">📜 الشهادات والاعتمادات الأكاديمية والمهنية</h2>
-            <div class="cert-grid">
+            <ul class="contact-list">
+                <li>
+                    <a href="tel:+2001273818012" class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div class="contact-info">
+                            <span class="contact-title">الهاتف</span>
+                            <span class="contact-value">+20 01273818012</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:noureldin7122@gmail.com" class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-info">
+                            <span class="contact-title">الإيميل الشخصي</span>
+                            <span class="contact-value">noureldin7122@gmail.com</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:law.NoureldinMamdouh261958@alexu.edu.eg" class="contact-item">
+                        <span class="contact-icon">🎓</span>
+                        <div class="contact-info">
+                            <span class="contact-title">الإيميل الجامعي</span>
+                            <span class="contact-value">law.NoureldinMamdouh261958<br>@alexu.edu.eg</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/201273818012" target="_blank" class="contact-item">
+                        <span class="contact-icon">💬</span>
+                        <div class="contact-info">
+                            <span class="contact-title">واتساب</span>
+                            <span class="contact-value">01273818012</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/Noureldin7" target="_blank" class="contact-item">
+                        <span class="contact-icon">✈️</span>
+                        <div class="contact-info">
+                            <span class="contact-title">تليجرام</span>
+                            <span class="contact-value">@Noureldin7</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://vk.com/" target="_blank" class="contact-item">
+                        <span class="contact-icon">🔵</span>
+                        <div class="contact-info">
+                            <span class="contact-title">حساب VK</span>
+                            <span class="contact-value">VKontakte Profile</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
 
-                <!-- شهادة 1 -->
-                <div class="cert-card">
-                    <div>
-                        <h3>خبير أوامر الذكاء الاصطناعي</h3>
-                        <div class="cert-issuer">مؤسسة دبي للمستقبل (Dubai Future Foundation)</div>
-                    </div>
-                    <div class="cert-actions">
-                        <!-- استبدل # برابط صورة الشهادة أو ملف الـ PDF -->
-                        <a href="#" target="_blank" class="btn-action btn-view">👁️ عرض الشهادة</a>
-                        <!-- استبدل # برابط منصة التحقق الرسمية -->
-                        <a href="#" target="_blank" class="btn-action btn-verify">✅ منصة التحقق</a>
-                    </div>
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            
+            <!-- الخبرات والتدريب العملي -->
+            <div class="section">
+                <h2 class="section-title">💼 الخبرات والتدريب العملي</h2>
+                
+                <div class="experience-card">
+                    <h3>متدرب مراجعة ومحاسبة (6 أشهر)</h3>
+                    <p>مكتب محاسبة ومراجعة مالية (صلاح سالم، هليوبوليس، القاهرة) — اكتساب مهارات المراجعة المالية، تحليل الميزانيات، تقييم الرقابة الداخلية، وإعداد التقارير المؤسسية.</p>
                 </div>
 
-                <!-- شهادة 2 -->
-                <div class="cert-card">
-                    <div>
-                        <h3>تحدي التميز (Atomic Challenge)</h3>
-                        <div class="cert-issuer">مؤسسة Rosatom الروسية (17 نقطة)</div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="#" target="_blank" class="btn-action btn-view">👁️ عرض الشهادة</a>
-                        <a href="#" target="_blank" class="btn-action btn-verify">✅ منصة التحقق</a>
-                    </div>
-                </div>
-
-                <!-- شهادة 3 -->
-                <div class="cert-card">
-                    <div>
-                        <h3>أساسيات التسويق الرقمي</h3>
-                        <div class="cert-issuer">Google Digital Garage</div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="#" target="_blank" class="btn-action btn-view">👁️ عرض الشهادة</a>
-                        <a href="#" target="_blank" class="btn-action btn-verify">✅ منصة التحقق</a>
-                    </div>
-                </div>
-
-                <!-- شهادة 4 -->
-                <div class="cert-card">
-                    <div>
-                        <h3>صياغة العقود القانونية</h3>
-                        <div class="cert-issuer">منصة معارف التعليمية</div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="#" target="_blank" class="btn-action btn-view">👁️ عرض الشهادة</a>
-                        <a href="#" target="_blank" class="btn-action btn-verify">✅ منصة التحقق</a>
-                    </div>
-                </div>
-
-                <!-- شهادة 5 -->
-                <div class="cert-card">
-                    <div>
-                        <h3>مهارات التواصل الفعال</h3>
-                        <div class="cert-issuer">منصة إدراك (Edraak)</div>
-                    </div>
-                    <div class="cert-actions">
-                        <a href="#" target="_blank" class="btn-action btn-view">👁️ عرض الشهادة</a>
-                        <a href="#" target="_blank" class="btn-action btn-verify">✅ منصة التحقق</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- الخبرات والتطوير العملي -->
-        <div class="section">
-            <h2 class="section-title">💼 الخبرات والتدريب العملي</h2>
-            <div class="exp-list">
-                <div class="exp-item">
+                <div class="experience-card">
                     <h3>تدريب عملي بالشئون القانونية</h3>
-                    <p>الهيئة العامة لميناء الإسكندرية — التدريب على مراجعة الصياغات القانونية والإجراءات الإدارية.</p>
+                    <p>الهيئة العامة لميناء الإسكندرية (يوليو 2026) — التدريب على مراجعة الصياغات القانونية والإجراءات الإدارية.</p>
                 </div>
-                <div class="exp-item">
-                    <h3>متدرب مراجعة ومحاسبة</h3>
-                    <p>مكتب محاسبة ومراجعة مالية — اكتساب مهارات المراجعة المالية والإشراف الإداري.</p>
+                
+                <div class="experience-card">
+                    <h3>تدريب مكثف - إدارة الشباب وتنمية التطوع</h3>
+                    <p>الهلال الأحمر المصري (يوليو 2026) — المشاركة الفعالة في التدريب والعمل التطوعي الإداري.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- وسائل التواصل الاجتماعي والاتصال -->
-        <div class="section">
-            <h2 class="section-title">📫 وسائل التواصل والاتصال الرسمي</h2>
-            <div class="contact-grid">
+            <!-- خطابات التوصية والوثائق الرسمية -->
+            <div class="section">
+                <h2 class="section-title">📄 خطابات التوصية والوثائق الرسمية</h2>
+                
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">خطاب توصية أكاديمي</h3>
+                            <div class="cert-issuer">أكاديمية ناصر (أ. محمد ناصر)</div>
+                        </div>
+                        <div class="cert-actions" style="grid-template-columns: 1fr;">
+                            <a href="Nasser_Academy_Recommendation_Noureldin_Professional.pdf" target="_blank" class="btn-action btn-view">👁️ عرض المستند</a>
+                        </div>
+                    </div>
 
-                <!-- البريد الشخصي -->
-                <!-- استبدل example@gmail.com ببريدك الشخصي -->
-                <a href="mailto:example@gmail.com" class="contact-item">
-                    <span class="contact-icon">✉️</span>
-                    <span>البريد الشخصي</span>
-                </a>
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">خطاب توصية مهني</h3>
+                            <div class="cert-issuer">مكتب المحاسبة والمراجعة (د. جرجس فوزي)</div>
+                        </div>
+                        <div class="cert-actions" style="grid-template-columns: 1fr;">
+                            <a href="Letter of Recommendation.pdf" target="_blank" class="btn-action btn-view">👁️ عرض المستند</a>
+                        </div>
+                    </div>
 
-                <!-- البريد الرسمي -->
-                <!-- استبدل official@domain.com ببريدك الرسمي -->
-                <a href="mailto:official@domain.com" class="contact-item">
-                    <span class="contact-icon">📧</span>
-                    <span>البريد الرسمي</span>
-                </a>
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">بيان درجات الثانوية العامة (مترجم)</h3>
+                            <div class="cert-issuer">وزارة التربية والتعليم / الخارجية المصرية</div>
+                        </div>
+                        <div class="cert-actions" style="grid-template-columns: 1fr;">
+                            <a href="Grade Statement [NOURELDIN MAMDOUH KHAMIS AHMED ABUISMAIL].pdf" target="_blank" class="btn-action btn-view">👁️ عرض المستند</a>
+                        </div>
+                    </div>
 
-                <!-- واتساب -->
-                <!-- استبدل رقم الهاتف بالرقم الخاص بك شاملاً كود الدولة -->
-                <a href="https://wa.me/201000000000" target="_blank" class="contact-item">
-                    <span class="contact-icon">💬</span>
-                    <span>واتساب (WhatsApp)</span>
-                </a>
-
-                <!-- تلجرام -->
-                <!-- استبدل username باسم مستخدم التلجرام -->
-                <a href="https://t.me/username" target="_blank" class="contact-item">
-                    <span class="contact-icon">✈️</span>
-                    <span>تلجرام (Telegram)</span>
-                </a>
-
-                <!-- فيسبوك -->
-                <!-- استبدل الرابط برابط حسابك على فيسبوك -->
-                <a href="https://facebook.com" target="_blank" class="contact-item">
-                    <span class="contact-icon">🌐</span>
-                    <span>فيسبوك (Facebook)</span>
-                </a>
-
-                <!-- VK (فكونتاكتي) -->
-                <!-- استبدل الرابط برابط حسابك على VK -->
-                <a href="https://vk.com" target="_blank" class="contact-item">
-                    <span class="contact-icon">🔵</span>
-                    <span>حساب VK الروسي</span>
-                </a>
-
-                <!-- لينكد إن -->
-                <a href="https://linkedin.com" target="_blank" class="contact-item">
-                    <span class="contact-icon">💼</span>
-                    <span>لينكد إن (LinkedIn)</span>
-                </a>
-
-                <!-- جيتهاب -->
-                <a href="https://github.com/noureldin7122" target="_blank" class="contact-item">
-                    <span class="contact-icon">💻</span>
-                    <span>GitHub</span>
-                </a>
-
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">شهادة حسن السير والسلوك</h3>
+                            <div class="cert-issuer">مدرسة المشير أحمد بدوي الثانوية</div>
+                        </div>
+                        <div class="cert-actions" style="grid-template-columns: 1fr;">
+                            <a href="Certificate of good conduct .pdf" target="_blank" class="btn-action btn-view">👁️ عرض المستند</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
+            <!-- الشهادات والاعتمادات مع شريط البحث الفوري -->
+            <div class="section">
+                <div class="section-title">
+                    <span>📜 الاعتمادات والشهادات الأخرى</span>
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن شهادة أو جهة إصدار...">
+                    </div>
+                </div>
+
+                <div class="cert-grid" id="certsContainer">
+                    
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">خبير أوامر الذكاء الاصطناعي (Foundation)</h3>
+                            <div class="cert-issuer">مؤسسة دبي للمستقبل</div>
+                        </div>
+                        <div class="cert-actions">
+                            <a href="Dubai_Future_Foundation_Prompt_Engineering.pdf" target="_blank" class="btn-action btn-view">👁️ عرض</a>
+                            <a href="https://www.dubaifuture.ae" target="_blank" class="btn-action btn-verify">✅ تحقق</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">أساسيات التسويق الرقمي</h3>
+                            <div class="cert-issuer">Google Digital Garage</div>
+                        </div>
+                        <div class="cert-actions">
+                            <a href="Google Digital Marketing Certificate.pdf" target="_blank" class="btn-action btn-view">👁️ عرض</a>
+                            <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank" class="btn-action btn-verify">✅ تحقق</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">مهارات التواصل الفعال</h3>
+                            <div class="cert-issuer">منصة إدراك (Edraak)</div>
+                        </div>
+                        <div class="cert-actions">
+                            <a href="Edraak.pdf" target="_blank" class="btn-action btn-view">👁️ عرض</a>
+                            <a href="https://www.edraak.org" target="_blank" class="btn-action btn-verify">✅ تحقق</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">أساسيات التسويق الإلكتروني</h3>
+                            <div class="cert-issuer">موقع فرصة (Forsa.com)</div>
+                        </div>
+                        <div class="cert-actions">
+                            <a href="forsa-certificate.pdf" target="_blank" class="btn-action btn-view">👁️ عرض</a>
+                            <a href="https://forsa.com" target="_blank" class="btn-action btn-verify">✅ تحقق</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">صياغة العقود القانونية</h3>
+                            <div class="cert-issuer">منصة معارف التعليمية</div>
+                        </div>
+                        <div class="cert-actions">
+                            <a href="M3aarf_Course_Legal_Contract_Drafting.pdf" target="_blank" class="btn-action btn-view">👁️ عرض</a>
+                            <a href="https://www.ma3aarf.com" target="_blank" class="btn-action btn-verify">✅ تحقق</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">لغة البرمجة C++</h3>
+                            <div class="cert-issuer">منصة معارف التعليمية</div>
+                        </div>
+                        <div class="cert-actions">
+                            <a href="M3aarf_Certificate c++.pdf" target="_blank" class="btn-action btn-view">👁️ عرض</a>
+                            <a href="https://www.ma3aarf.com" target="_blank" class="btn-action btn-verify">✅ تحقق</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
     </div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة © نور الدين ممدوح أبو إسماعيل — 2026</p>
-    </footer>
-
+    <!-- كود برمجي لشريط البحث الفوري -->
+    <script>
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let cards = document.querySelectorAll('.cert-card');
+            
+            cards.forEach(card => {
+                let title = card.querySelector('.cert-title').innerText.toLowerCase();
+                let issuer = card.querySelector('.cert-issuer').innerText.toLowerCase();
+                
+                if (title.includes(filter) || issuer.includes(filter)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
