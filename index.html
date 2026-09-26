@@ -7,15 +7,20 @@
     <meta name="description" content="Noureldin Mamdouh - Faculty of Law, Alexandria University. Professional and academic profile: CV, certificates, legal and accounting training, and recommendation letters.">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- سكريبت الترجمة -->
+    <!-- Google Translate Script (يدعم الترجمة لعدة لغات) -->
     <script type="text/javascript">
     function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,ru,en,it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      new google.translate.TranslateElement({
+        pageLanguage: 'en', 
+        includedLanguages: 'ar,ru,en,it,fr,de,es', 
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
     }
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <style>
-      :root {
+        :root {
             --primary: #1e3a8a;
             --secondary: #2563eb;
             --accent: #0d9488;
@@ -27,9 +32,25 @@
         }
 
         html { scroll-padding-top: 70px; }
-
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; scroll-behavior: smooth; }
+
+        /* Navigation Bar */
+        nav {
+            background-color: var(--secondary);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        nav .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
 
         .layout-wrapper {
             display: grid;
@@ -53,9 +74,21 @@
         }
 
         .sidebar-header { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px; }
-        .sidebar-header h1 { font-size: 1.5rem; color: var(--primary); font-weight: 800; line-height: 1.3; }
+        .sidebar-header h1 { font-size: 1.35rem; color: var(--primary); font-weight: 800; line-height: 1.3; }
         .sidebar-header p { font-size: 0.88rem; color: var(--text-muted); margin-top: 8px; font-weight: 600; }
         .rus-intro { font-size: 0.8rem; color: #64748b; font-style: italic; margin-top: 10px; display: block; line-height: 1.4; }
+
+        .cv-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .cv-button:hover { background-color: var(--primary); }
 
         .contact-list { list-style: none; }
         .contact-item {
@@ -78,7 +111,6 @@
 
         /* Main Content */
         .main-content { display: flex; flex-direction: column; gap: 30px; }
-        
         .section { background: var(--card-bg); padding: 30px; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .section-title { color: var(--primary); font-size: 1.35rem; font-weight: 800; border-bottom: 3px solid var(--secondary); padding-bottom: 10px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
 
@@ -115,29 +147,28 @@
 </head>
 <body>
 
-    <!-- شريط التنقل السريع مع أداة الترجمة -->
-    <nav style="background-color: #2563eb; padding: 10px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-            <a href="#about" style="color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem;">عني / About</a>
-            <a href="#certificates" style="color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem;">الشهادات / Certificates</a>
-            <a href="#cv" style="color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem;">السيرة الذاتية / CV</a>
-            <a href="#contact" style="color: white; text-decoration: none; font-weight: bold; font-size: 0.9rem;">تواصل / Contact</a>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-links">
+            <a href="#about">عني / About</a>
+            <a href="#certificates">الشهادات / Certificates</a>
+            <a href="#cv">السيرة الذاتية / CV</a>
+            <a href="#contact">تواصل / Contact</a>
         </div>
-        <!-- عنصر أداة الترجمة من جوجل -->
         <div id="google_translate_element"></div>
     </nav>
 
     <div class="layout-wrapper">
         
-        <!-- Sidebar (About) -->
+        <!-- Sidebar -->
         <aside class="sidebar" id="about">
             <div class="sidebar-header">
                 <h1>NOURELDIN MAMDOUH KHAMIS AHMED ABUISMAIL</h1>
                 <p class="subtitle">Faculty of Law - Alexandria University</p>
                 <span class="rus-intro">Ambitious specialist with legal education, experience in business administration, and an interest in modern technologies.</span> 
                 
-                <div id="cv" class="cv-section" style="text-align: center; margin: 20px 0;">
-                    <a href="cv.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                <div id="cv" class="cv-section" style="text-align: center; margin-top: 20px;">
+                    <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="cv-button">
                         📄 View My CV / السيرة الذاتية
                     </a>
                 </div>  
@@ -172,7 +203,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://wa.me/201273818012" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="contact-item">
+                    <a href="https://wa.me/201273818012" target="_blank" rel="noopener noreferrer" class="contact-item">
                         <span class="contact-icon" aria-hidden="true">💬</span>
                         <div class="contact-info">
                             <span class="contact-title">WhatsApp</span>
@@ -181,7 +212,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://t.me/Noureldin7" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="contact-item">
+                    <a href="https://t.me/Noureldin7" target="_blank" rel="noopener noreferrer" class="contact-item">
                         <span class="contact-icon" aria-hidden="true">✈️</span>
                         <div class="contact-info">
                             <span class="contact-title">Telegram</span>
@@ -190,7 +221,7 @@
                     </a>
                 </li>
                 <li>
-                  <a href="https://vk.com/id1113090360" target="_blank" rel="noopener noreferrer" class="contact-item">
+                    <a href="https://vk.com/id1113090360" target="_blank" rel="noopener noreferrer" class="contact-item">
                         <span class="contact-icon" aria-hidden="true">🔵</span>
                         <div class="contact-info">
                             <span class="contact-title">VK</span>
@@ -205,17 +236,18 @@
         <main class="main-content">
             
             <!-- Certificates Grouped -->
-            <div id="certificates" class="section">
-                <h2 style="color: #1e3a8a; border-bottom: 2px solid #2563eb; padding-bottom: 5px; margin-bottom: 20px;">الشهادات والتدريب / Certificates</h2>
+            
+            < section id="certificates" class="section">
+                <h2 style="color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 5px; margin-bottom: 20px;">الشهادات والتدريب / Certificates</h2>
 
-                <h3 style="color: #2563eb; margin-top: 15px; font-size: 1.1rem;">⚖️ الأكاديمية والقانونية / Academic & Legal</h3>
+                <h3 style="color: var(--secondary); margin-top: 15px; font-size: 1.1rem;">⚖️ الأكاديمية والقانونية / Academic & Legal</h3>
                 <ul style="margin: 10px 20px; line-height: 1.8;">
-                    <li><a href="Alexandria_Port_Authority.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer">تدريب هيئة ميناء الإسكندرية (الشؤون القانونية)</a></li>
+                    <li><a href="Alexandria_Port_Authority.pdf" target="_blank" rel="noopener noreferrer">تدريب هيئة ميناء الإسكندرية (الشؤون القانونية)</a></li>
                 </ul>
 
-                <h3 style="color: #2563eb; margin-top: 20px; font-size: 1.1rem;">🤖 الذكاء الاصطناعي والتكنولوجيا / AI & Tech</h3>
+                <h3 style="color: var(--secondary); margin-top: 20px; font-size: 1.1rem;">🤖 الذكاء الاصطناعي والتكنولوجيا / AI & Tech</h3>
                 <ul style="margin: 10px 20px; line-height: 1.8;">
-                    <li><a href="noureldin-mamdouh-khamis-ahmed-certificate.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer">شهادة مليون خبير لأوامر الذكاء الاصطناعي (دبي للـ AI)</a></li>
+                    <li><a href="noureldin-mamdouh-khamis-ahmed-certificate.pdf" target="_blank" rel="noopener noreferrer">شهادة مليون خبير لأوامر الذكاء الاصطناعي (دبي للـ AI)</a></li>
                 </ul>
             </div>
             
@@ -250,7 +282,7 @@
                             <div class="cert-issuer">Nasser Academy (Mr. Mohamed Nasser)</div>
                         </div>
                         <div class="cert-actions" style="grid-template-columns: 1fr;">
-                            <a href="Nasser_Academy_Recommendation_Noureldin_Professional.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
+                            <a href="Nasser_Academy_Recommendation_Noureldin_Professional.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
                         </div>
                     </div>
 
@@ -260,7 +292,7 @@
                             <div class="cert-issuer">Accounting and Auditing Office (Dr. Gerguis Fawzy)</div>
                         </div>
                         <div class="cert-actions" style="grid-template-columns: 1fr;">
-                            <a href="Letter_of_Recommendation.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
+                            <a href="Letter_of_Recommendation.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
                         </div>
                     </div>
 
@@ -270,7 +302,7 @@
                             <div class="cert-issuer">Ministry of Education / Egyptian Foreign Ministry</div>
                         </div>
                         <div class="cert-actions" style="grid-template-columns: 1fr;">
-                            <a href="english_success_statement.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
+                            <a href="english_success_statement.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
                         </div>
                     </div>
 
@@ -280,7 +312,7 @@
                             <div class="cert-issuer">Field Marshal Ahmed Badawy Secondary School</div>
                         </div>
                         <div class="cert-actions" style="grid-template-columns: 1fr;">
-                            <a href="Certificate of good conduct .pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
+                            <a href="Certificate of good conduct .pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
                         </div>
                     </div>
                 </div>
@@ -298,13 +330,25 @@
 
                 <div class="cert-grid" id="certsContainer">
                     
+                    <!-- الشهادة الجديدة: إدارة الموارد البشرية (OmSTU & Stepik) -->
+                    <div class="cert-card">
+                        <div>
+                            <h3 class="cert-title">إدارة الموارد البشرية / Personnel Management (100% С отличием)</h3>
+                            <div class="cert-issuer">جامعة أومسك الحكومية التقنية (OmSTU) & Stepik</div>
+                        </div>
+                        <div class="cert-actions">
+                            <a href="stepik_hr_management_omstu.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">عرض الشهادة</a>
+                            <a href="https://stepik.org/cert/3348801" target="_blank" rel="noopener noreferrer" class="btn-action btn-verify">التحقق (Verify)</a>
+                        </div>
+                    </div>
+
                     <div class="cert-card">
                         <div>
                             <h3 class="cert-title">Legal and Administrative Training Certificate</h3>
                             <div class="cert-issuer">General Authority of Alexandria Port</div>
                         </div>
                         <div class="cert-actions" style="grid-template-columns: 1fr;">
-                            <a href="Alexandria_Port_Authority.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
+                            <a href="Alexandria_Port_Authority.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
                         </div>
                     </div>
 
@@ -314,7 +358,7 @@
                             <div class="cert-issuer">Egyptian Red Crescent</div>
                         </div>
                         <div class="cert-actions" style="grid-template-columns: 1fr;">
-                            <a href="Egyptian_Red_Crescent.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
+                            <a href="Egyptian_Red_Crescent.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
                         </div>
                     </div>
 
@@ -324,7 +368,7 @@
                             <div class="cert-issuer">Official Academic Requirements</div>
                         </div>
                         <div class="cert-actions" style="grid-template-columns: 1fr;">
-                            <a href="Russian_Acceptance.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
+                            <a href="Russian_Acceptance.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View Document</a>
                         </div>
                     </div>
 
@@ -334,8 +378,8 @@
                             <div class="cert-issuer">Dubai Future Foundation</div>
                         </div>
                         <div class="cert-actions">
-                            <a href="Dubai_Future_Foundation_Prompt_Engineering.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View</a>
-                            <a href="https://www.dubaifuture.ae" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
+                            <a href="Dubai_Future_Foundation_Prompt_Engineering.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View</a>
+                            <a href="https://www.dubaifuture.ae" target="_blank" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
                         </div>
                     </div>
 
@@ -345,8 +389,8 @@
                             <div class="cert-issuer">Google Digital Garage</div>
                         </div>
                         <div class="cert-actions">
-                            <a href="Google Digital Marketing Certificate.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View</a>
-                            <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
+                            <a href="Google Digital Marketing Certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View</a>
+                            <a href="https://learndigital.withgoogle.com/digitalgarage" target="_blank" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
                         </div>
                     </div>
 
@@ -356,8 +400,8 @@
                             <div class="cert-issuer">Edraak Platform</div>
                         </div>
                         <div class="cert-actions">
-                            <a href="Edraak.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View</a>
-                            <a href="https://www.edraak.org" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
+                            <a href="Edraak.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View</a>
+                            <a href="https://www.edraak.org" target="_blank" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
                         </div>
                     </div>
 
@@ -367,8 +411,8 @@
                             <div class="cert-issuer">Forsa Platform</div>
                         </div>
                         <div class="cert-actions">
-                            <a href="forsa-certificate.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View</a>
-                            <a href="https://forsa.com" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
+                            <a href="forsa-certificate.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View</a>
+                            <a href="https://forsa.com" target="_blank" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
                         </div>
                     </div>
 
@@ -378,8 +422,8 @@
                             <div class="cert-issuer">Ma3aarf Educational Platform</div>
                         </div>
                         <div class="cert-actions">
-                            <a href="M3aarf_Course_Legal_Contract_Drafting.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View</a>
-                            <a href="https://www.ma3aarf.com" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
+                            <a href="M3aarf_Course_Legal_Contract_Drafting.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View</a>
+                            <a href="https://www.ma3aarf.com" target="_blank" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
                         </div>
                     </div>
 
@@ -389,8 +433,8 @@
                             <div class="cert-issuer">Ma3aarf Educational Platform</div>
                         </div>
                         <div class="cert-actions">
-                            <a href="M3aarf_Certificate c++.pdf" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-view">View</a>
-                            <a href="https://www.ma3aarf.com" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
+                            <a href="M3aarf_Certificate c++.pdf" target="_blank" rel="noopener noreferrer" class="btn-action btn-view">View</a>
+                            <a href="https://www.ma3aarf.com" target="_blank" rel="noopener noreferrer" class="btn-action btn-verify">Verify</a>
                         </div>
                     </div>
 
@@ -403,8 +447,8 @@
     <!-- Live Search Script -->
     <script>
         document.getElementById('searchInput').addEventListener('input', function() {
-    let filter = this.value.toLowerCase();
-    let cards = document.querySelectorAll('#certsContainer .cert-card');
+            let filter = this.value.toLowerCase().trim();
+            let cards = document.querySelectorAll('#certsContainer .cert-card');
             
             cards.forEach(card => {
                 let title = card.querySelector('.cert-title').innerText.toLowerCase();
